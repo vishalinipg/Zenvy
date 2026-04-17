@@ -10,13 +10,13 @@ import axios from 'axios'
 // ── API Base URL ──────────────────────────────────────────────
 // Priority:
 //   1. VITE_API_URL env var (set on Render → Environment tab)
-//   2. localhost:8000 (local dev)
-// On Render frontend, set VITE_API_URL = https://your-backend.onrender.com
+//   2. localhost:8000 for local dev
+//   3. Hardcoded Render backend URL as production fallback
 const API_URL =
   import.meta.env.VITE_API_URL ||
   (window.location.hostname === 'localhost'
     ? 'http://localhost:8000'
-    : 'https://zenvy-backend-sxkp.onrender.com')
+    : 'https://zenvy-backend-q10w.onrender.com')
 
 const API = axios.create({
   baseURL: API_URL,
